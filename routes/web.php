@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 //rotte pubbliche
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'PageController@index');
 
 //rotte autentificazione
 Auth::routes();
@@ -25,6 +24,6 @@ Auth::routes();
 Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->group(function() {
 
     Route::get('/home', 'HomeController@index')->name('home');
-
+    Route::resource('posts', 'PostController');
 });
 
