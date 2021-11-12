@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 //rotte pubbliche
 
 Route::get('/', 'PageController@index');
+Route::get('/blog', 'FrontController@index')->name('blog.index');
+Route::get('/blog/{slug}', 'FrontController@show')->name('blog.show');
 
 //rotte autentificazione
 Auth::routes();
