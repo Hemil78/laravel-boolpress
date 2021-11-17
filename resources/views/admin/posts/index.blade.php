@@ -21,6 +21,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Title</th>
                             <th scope="col">Slug</th>
+                            <th scope="col">Category</th>
                             <th scope="col">Azioni</th>
                         </tr>
                         </thead>
@@ -30,6 +31,7 @@
                                 <td>{{$post['id']}}</td>
                                 <td>{{$post['title']}}</td>
                                 <td>{{$post['slug']}}</td>
+                                <td>{{$post["category"]["name"] ?? " "}}</td>
                                 <td>
                                     <a href="{{route("admin.posts.show", $post['id'])}}">
                                         <button type="button" class="btn btn-primary">Visualizza</button>
