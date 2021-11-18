@@ -36,6 +36,15 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        <p>Tags</p>
+                        <div class="form-group" style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 30px;">
+                            @foreach($tags as $tag)
+                                <div class="custom-control custom-checkbox">
+                                    <input name="tags[]" value="{{$tag['id']}}" type="checkbox" class="custom-control-input" id="tag-{{$tag['id']}}">
+                                    <label class="custom-control-label" for="tag-{{$tag['id']}}">{{$tag['name']}}</label>
+                                </div>
+                            @endforeach
+                        </div>
                         <button type="submit" class="btn btn-primary">Crea</button>
                     </form>
                 </div>
