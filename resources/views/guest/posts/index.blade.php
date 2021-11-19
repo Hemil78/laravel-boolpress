@@ -12,7 +12,7 @@ a
 
             @foreach ($posts as $post)
             <article class="blog-post">
-                <h2 class="blog-post-title"><a href="{{route('blog.show', $post['slug'])}}">{{$post['title']}}</a></h2>
+                <h2 class="blog-post-title"><a href="{{route('blog.show', $post['slug'])}}" style="text-decoration: none;">{{$post['title']}}</a></h2>
                 <p class="blog-post-meta">{{$post->created_at->diffforHumans()}} <a href="#">Chris</a></p>
 
                 <p>{{$post['content']}}</p>

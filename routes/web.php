@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@index');
 Route::get('/blog', 'FrontController@index')->name('blog.index');
-Route::get('/blog/{slug}', 'FrontController@show')->name('blog.show');
+Route::get('/blog/{slug}', 'FrontController@show')->name('posts.show');
+Route::get('/blog/category/{slug}', 'CategoryController@show')->name('categories.show');
 
 //rotte autentificazione
 Auth::routes();
